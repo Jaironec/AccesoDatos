@@ -156,6 +156,7 @@ namespace AccesoDatos
             this.btnNuevo.TabIndex = 12;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // datoTiempo
             // 

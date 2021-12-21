@@ -53,5 +53,13 @@ namespace AccesoDatos
                 MessageBox.Show(E.Message.ToString());
             }
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            txtCedula.Clear();
+            txtApellido.Clear();
+            txtNombres.Clear();
+            txtPeso.Clear();
+        }
     }
 }
