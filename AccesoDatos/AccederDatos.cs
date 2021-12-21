@@ -31,11 +31,10 @@ namespace AccesoDatos
             //3.1 configurar los parametros @cedula, @apellidos, @nombres, @fechadenacimiento, @peso
             try
             {
-                DateTime fecha = datoTiempo.Value;
                 comando.Parameters.Add(new SqlParameter("@cedula", txtCedula.Text));
                 comando.Parameters.Add(new SqlParameter("@apellidos", this.txtApellido.Text));
                 comando.Parameters.Add(new SqlParameter("@nombres", this.txtNombres.Text));
-                comando.Parameters.Add(new SqlParameter("@fechaNacimiento", fecha.ToString()));
+                comando.Parameters.Add(new SqlParameter("@fechaNacimiento", datoTiempo.Value));
                 comando.Parameters.Add(new SqlParameter("@peso", this.txtPeso.Text));
                 //3.2 abrir la conexion 
                 conexion.Open();
@@ -45,9 +44,9 @@ namespace AccesoDatos
                 conexion.Close();
                 MessageBox.Show("Filas Insertadas: " + res.ToString());
             }
-            catch (SqlException E)
+            catch (SqlException e1)
             {
-                MessageBox.Show("Tiene que llenar todos los datos");
+                MessageBox.Show(e1.Message.ToString(),"Tiene que llenar todos los datos");
             }
             catch (Exception E)
             {
